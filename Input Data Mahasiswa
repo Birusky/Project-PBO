@@ -1,0 +1,71 @@
+//mengimpor Scanner ke program
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        //Mendeklarasikan variable
+        String Nim, Nama, jurusan, Angkatan, grade;
+        int presensi, tugas, UTS, UAS;
+        double akhir;
+
+        //menampilkan data
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("------------");
+        System.out.println("Input Nama");
+        System.out.println("------------");
+
+        System.out.print("Masukkan NIM: ");
+        Nim = keyboard.nextLine();
+        System.out.print("Masukkan Nama: ");
+        Nama = keyboard.nextLine();
+
+        System.out.println("Masukan nilai mata kuliah Pemrograman Berorientasi Objek");
+        System.out.print("1. Nilai Presensi: ");
+        presensi = keyboard.nextInt();
+        System.out.print("2. Nilai Tugas: ");
+        tugas = keyboard.nextInt();
+        System.out.print("3. Nilai UTS: ");
+        UTS = keyboard.nextInt();
+        System.out.print("4. Nilai UAS: ");
+        UAS = keyboard.nextInt();
+
+        if (Nim.startsWith("071", 4)){
+            jurusan = "Informatika";
+        }else {
+            jurusan = "Tidak ada";
+        }
+        Angkatan = Nim.substring(0, 4);
+
+        //Rumus menghitung nilai akhir
+        akhir =(0.1*presensi)+(0.2*tugas)+(0.3*UTS)+(0.4*UAS);
+        System.out.println("---------------------------------------------------");
+        System.out.println("Nilai Mata Kuliah Pemrograman Berorientasi Object");
+        System.out.println("---------------------------------------------------");
+        System.out.println("NIM: "+Nim);
+        System.out.println("Nama: "+Nama);
+        System.out.println("Jurusan: "+jurusan);
+        System.out.println("Angkatan: "+Angkatan);
+
+        System.out.println("1. Nilai Presensi: "+presensi);
+        System.out.println("2. Nilai Tugas:  "+tugas);
+        System.out.println("3. Nilai UTS: "+UTS);
+        System.out.println("4. Nilai UAS: "+UAS);
+        System.out.println("5. Nilai Akhir: "+akhir);
+
+        System.out.println(" ");
+        if (akhir >= 80) {
+            grade = "A";
+        } else if (akhir >= 70) {
+            grade = "B";
+        } else if (akhir >= 60) {
+            grade = "C";
+        } else if (akhir >= 50) {
+            grade = "D";
+        }else {
+            grade = "E";
+        }
+        System.out.println("Grade : " + grade);
+
+
+
+    }
+}
